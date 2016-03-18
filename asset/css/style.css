@@ -316,6 +316,7 @@ pre .javascript .function {
     width: 48%;
     display: inline-block;
     vertical-align: middle;
+    min-height: 0;
   }
 }
 @media screen and (max-width: 700px) {
@@ -323,6 +324,14 @@ pre .javascript .function {
     width: 50%;
     display: inline-block;
     vertical-align: middle;
+  }
+}
+.img-logo {
+  margin: 50px auto;
+}
+@media screen and (max-width: 700px) {
+  .img-logo {
+    margin: 0 auto;
   }
 }
 .menu-list {
