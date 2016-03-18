@@ -48,7 +48,7 @@ a:hover {
 }
 .content pre,
 .content .highlight {
-  background: #272822;
+  background: #696969;
   margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
@@ -168,16 +168,20 @@ pre .javascript .function {
 .content .highlight .gutter pre {
   text-align: right;
 }
+.content .highlight .gutter pre .line {
+  color: #c5c5c5;
+}
 .content .highlight .line {
   height: 22.400000000000002px;
   padding-left: 20px;
+  font-family: Consolas, Arial, 'Microsoft Yahei';
 }
 .content .gist {
   margin: 0 -20px;
   border-style: solid;
   border-color: color-border;
   border-width: 1px 0;
-  background: #272822;
+  background: #696969;
   padding: 15px 20px 15px 0;
 }
 .content .gist .gist-file {
@@ -203,7 +207,7 @@ pre .javascript .function {
   border: none;
 }
 .content .gist .gist-file .gist-meta {
-  background: #272822;
+  background: #696969;
   color: #75715e;
   font: 0.85em sans-serief;
   text-shadow: 0 0;
@@ -264,13 +268,8 @@ pre .javascript .function {
   padding-top: 20px;
 }
 .box-footer {
-  width: 400px;
+  text-align: center;
   margin: 0 auto;
-}
-@media screen and (max-width: 700px) {
-  .box-footer {
-    width: 200px;
-  }
 }
 .layout-logo {
   background-color: #fff;
@@ -302,7 +301,28 @@ pre .javascript .function {
 @media screen and (max-width: 700px) {
   .layout-menu {
     margin: 0 auto;
-    width: 200px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .box-log-md {
+    display: none;
+  }
+}
+.box-log-xs {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .box-log-xs {
+    width: 48%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+@media screen and (max-width: 700px) {
+  .box-menu-list {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 .menu-list {
@@ -311,6 +331,7 @@ pre .javascript .function {
 }
 .box-menu-item {
   margin-top: 5px;
+  list-style: outside;
 }
 .box-menu-item a {
   color: #fff;
@@ -327,9 +348,14 @@ pre .javascript .function {
   margin-bottom: 40px;
   border-bottom: 1px solid #dcdcdc;
 }
+.box-archive-item-title {
+  padding-bottom: 5px;
+  line-height: 1.5;
+}
 .box-archive-item-date {
   position: relative;
   float: right;
+  margin-top: -25px;
 }
 .panel-archive-index-title {
   margin-bottom: 40px;
