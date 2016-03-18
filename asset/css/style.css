@@ -171,6 +171,9 @@ pre .javascript .function {
 .content .highlight .gutter pre .line {
   color: #c5c5c5;
 }
+.content .highlight .code .line {
+  padding-right: 40px;
+}
 .content .highlight .line {
   height: 22.400000000000002px;
   padding-left: 20px;
@@ -332,6 +335,11 @@ pre .javascript .function {
 @media screen and (max-width: 700px) {
   .img-logo {
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  .panel-content {
+    width: 100%;
   }
 }
 .menu-list {
