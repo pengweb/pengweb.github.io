@@ -258,6 +258,7 @@ pre .javascript .function {
 }
 .layout-footer {
   margin-left: 300px;
+  font-size: 12px;
 }
 @media screen and (max-width: 700px) {
   .layout-footer {
@@ -335,6 +336,7 @@ pre .javascript .function {
 @media screen and (max-width: 700px) {
   .img-logo {
     margin: 0 auto;
+    width: 180px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -343,7 +345,7 @@ pre .javascript .function {
   }
 }
 .menu-list {
-  margin: 0 auto;
+  margin: 8px auto;
   width: 40%;
 }
 .box-menu-item {
@@ -373,6 +375,7 @@ pre .javascript .function {
   position: relative;
   float: right;
   margin-top: -25px;
+  font-size: 12px;
 }
 .panel-archive-index-title {
   margin-bottom: 40px;
@@ -538,6 +541,9 @@ article li ul {
   margin-right: 0.5em;
   margin-left: 1em;
   float: right;
+}
+.content .highlight {
+  font-size: 12px;
 }
 .content-tag {
   font-size: 10px;
