@@ -254,7 +254,7 @@ pre .javascript .function {
   }
 }
 .panel-content {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 .layout-footer {
   margin-left: 300px;
@@ -473,6 +473,7 @@ article li ul {
   margin-bottom: 20px;
   font-size: 28px;
   letter-spacing: 1px;
+  margin-top: -65px;
 }
 .content {
   overflow: hidden;
@@ -566,4 +567,7 @@ article li ul {
 }
 .content-nav a:hover {
   color: color-link;
+}
+.content-comments {
+  width: 80%;
 }
