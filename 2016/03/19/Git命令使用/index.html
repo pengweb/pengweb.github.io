@@ -6,16 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title> &#39;haha&#39; | 张鹏的全栈之路 </title>
-	<meta property="og:title" content=" &#39;haha&#39; | 张鹏的全栈之路 " />
-	<meta name="twitter:title" content=" &#39;haha&#39; | 张鹏的全栈之路 ">
+	<title> Git命令使用 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" Git命令使用 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" Git命令使用 | 张鹏的全栈之路 ">
 
 	<meta property="og:type" content="article">
 	<meta name="twitter:card" content="summary">
 
-	<meta name="description" content=" &#39;haha&#39; | 张鹏的全栈之路 ">
-	<meta property="og:description" content=" &#39;haha&#39; | 张鹏的全栈之路 " />
-	<meta name="twitter:description" content=" &#39;haha&#39; | 张鹏的全栈之路 " />
+	<meta name="description" content=" Git命令使用 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" Git命令使用 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" Git命令使用 | 张鹏的全栈之路 " />
 
 	<link rel="icon" type="image/x-icon" href="http://yoursite.com/asset/img/favicon.png">
 
@@ -24,7 +24,7 @@
 
 	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
 
-	<link rel="canonical" href="/2016/03/18/haha/index.html">
+	<link rel="canonical" href="/2016/03/19/Git命令使用/index.html">
 
 	<link rel="stylesheet" href="/asset/css/style.css">
 
@@ -91,28 +91,29 @@
 
 
 					<p class="content-meta">
-						<span class="meta-date" itemprop="datePublished" content="2016-03-18">2016-03-18</span>
+						<span class="meta-date" itemprop="datePublished" content="2016-03-19">2016-03-19</span>
 
 
 					</p>
 
 
 					<h2 class="box-content-title">
-						<a href="/2016/03/18/haha/"  itemprop="url"><span class="content-title" itemprop="name">&#39;haha&#39;</span></a>
+						<a href="/2016/03/19/Git命令使用/"  itemprop="url"><span class="content-title" itemprop="name">Git命令使用</span></a>
 					</h2>
 
 					<div class="content post-item-content" itemprop="articleBody">
 
-<blockquote>
-<p>today</p>
-</blockquote>
-
+<p>[TOC]</p>
+<p>#1.创建本地仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建一个要同步文件夹，并且进入这个文件夹</span><br><span class="line">git init //初始化git</span><br><span class="line">git add . //将文件夹内的所有文件放到暂存区，注意点之前有空格</span><br><span class="line">git commit <span class="_">-a</span> -m <span class="string">'这里写的是备注'</span> //提交所有（a）更新过的文件, -m是备注</span><br></pre></td></tr></table></figure>
+<h1 id="2-发送到远程服务器"><a href="#2-发送到远程服务器" class="headerlink" title="2.发送到远程服务器"></a>2.发送到远程服务器</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果要想传到github上，先在github上创建一个仓库，然后执行下边指令</span></span><br><span class="line">git remote add origin git@github.com:pengweb/BLOG.git   <span class="comment">//关联到github上，此时并没有在github上创建呢，只是关联上了</span></span><br><span class="line">git push -u origin master  <span class="comment">//这样就推送上去了，这里的u为了让本地分支也关联到远程服务器上的分支</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-更新中···"><a href="#3-更新中···" class="headerlink" title="3.更新中···"></a>3.更新中···</h1>
 					</div>
 
 
 					<div class="content-tag">
 
-<a class="tag-link" href="/tags/css/">css</a>, <a class="tag-link" href="/tags/html/">html</a>, <a class="tag-link" href="/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/tags/others/">others</a>
+<a class="tag-link" href="/tags/others/">others</a>
 
 					</div>
 
@@ -127,9 +128,11 @@
 			<div class="box-post-nav">
 
 
+					<a href="/2016/03/20/Markdown语法总结/" title="Markdown语法总结">&larr; Prev</a>
 
 
-					<a href="/2016/03/17/jQuery-笔记/" title="'jQuery---笔记'">Next &rarr;</a>
+
+					<a href="/2016/03/19/Github-Hexo搭建个人博客/" title="Github+Hexo搭建个人博客">Next &rarr;</a>
 
 
 			</div>
@@ -138,7 +141,7 @@
 		
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/18/haha/index.html" data-title="&#39;haha&#39;" data-url="/2016/03/18/haha/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/19/Git命令使用/index.html" data-title="Git命令使用" data-url="/2016/03/19/Git命令使用/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
