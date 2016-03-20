@@ -178,6 +178,7 @@ pre .javascript .function {
   height: 22.400000000000002px;
   padding-left: 20px;
   font-family: Consolas, Arial, 'Microsoft Yahei';
+  white-space: nowrap;
 }
 .content .gist {
   margin: 0 -20px;
@@ -545,6 +546,9 @@ article li ul {
 }
 .content .highlight {
   font-size: 12px;
+}
+.content img {
+  max-width: 100%;
 }
 .content-tag {
   font-size: 10px;
