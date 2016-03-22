@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> FIS3使用总结 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" FIS3使用总结 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" FIS3使用总结 | 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" FIS3使用总结 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" FIS3使用总结 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" FIS3使用总结 | 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="http://yoursite.com/asset/img/favicon.png">
+
+	<link rel="image_src" href="http://yoursite.com/asset/img/logo.png" >
+	<meta property="og:image" content="http://yoursite.com/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/03/21/FIS3使用总结/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+							<li class="box-menu-item"><a href="/archives"><span class="menu-item">Sitemap</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-03-21">2016-03-21</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/03/21/FIS3使用总结/"  itemprop="url"><span class="content-title" itemprop="name">FIS3使用总结</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<p>一、安装FIS3</p>
+<blockquote>npm install -g fis3</blockquote><br>二、安装fis3的less插件<br><blockquote>npm install -g fis-parser-less</blockquote><br>三、配置fis-conf.js(以下为我自己的配置，放在要发布的app目录)<br>这个配置实现了，MD5戳，文件压缩，合并，Less预处理，Sprites雪碧图<br><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=========================================MD5======================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 加 md5</span></span><br><span class="line"></span><br><span class="line">fis.match(<span class="string">'*.&#123;js,css,png&#125;'</span>, &#123;</span><br><span class="line">  useHash: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//时间戳设置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* fis.set('date', new Date);</span><br><span class="line"></span><br><span class="line"> fis.match('*.&#123;js,css,png&#125;', &#123;</span><br><span class="line">   query: '?t=' + (fis.get('date').getYear() + 1900)</span><br><span class="line">          + (fis.get('date').getMonth() + 1)</span><br><span class="line">          + (fis.get('date').getDate())</span><br><span class="line"> &#125;);*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*     时间戳的另一种写法</span><br><span class="line"></span><br><span class="line"> fis.set('new date', Date.now());</span><br><span class="line"> fis.match('*.&#123;js,css,png&#125;', &#123;</span><br><span class="line">   query: '?=t' + fis.get('new date')</span><br><span class="line"> &#125;);</span><br><span class="line"></span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//======================================压缩=======================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//     用了下边的打包合集，所以注释掉了这个</span></span><br><span class="line"></span><br><span class="line">fis.match(<span class="string">'*.js'</span>, &#123;</span><br><span class="line">  <span class="comment">// fis-optimizer-uglify-js 插件进行压缩，已内置</span></span><br><span class="line">  optimizer: fis.plugin(<span class="string">'uglify-js'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">fis.match(<span class="string">'*.css'</span>, &#123;</span><br><span class="line">  <span class="comment">// fis-optimizer-clean-css 插件进行压缩，已内置</span></span><br><span class="line">  optimizer: fis.plugin(<span class="string">'clean-css'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">fis.match(<span class="string">'*.png'</span>, &#123;</span><br><span class="line">  <span class="comment">// fis-optimizer-png-compressor 插件进行压缩，已内置</span></span><br><span class="line">  optimizer: fis.plugin(<span class="string">'png-compressor'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//====================================合并打包====================================</span></span><br><span class="line"></span><br><span class="line">fis.match(<span class="string">'::packager'</span>, &#123;</span><br><span class="line">    postpackager: fis.plugin(<span class="string">'loader'</span>, &#123;</span><br><span class="line">        <span class="comment">//不同页面打包到不同的包内，如果去掉的话就是只有一个包，如果想指定打包文件，请看注释</span></span><br><span class="line">        <span class="comment">//allInOne: true</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//     这个是分别指定打包文件的方法</span></span><br><span class="line"></span><br><span class="line">fis.match(<span class="string">'/client/static/js/*.js'</span>, &#123;</span><br><span class="line">    packTo: <span class="string">'/client/static/js/aio.js'</span></span><br><span class="line">&#125;);</span><br><span class="line">fis.match(<span class="string">'/client/static/lib/*.js'</span>, &#123;</span><br><span class="line">    packTo: <span class="string">'/client/static/lib/lib_aio.js'</span></span><br><span class="line">&#125;);</span><br><span class="line">fis.match(<span class="string">'/client/static/css/*.&#123;less,css&#125;'</span>, &#123;</span><br><span class="line">    packTo: <span class="string">'/client/static/css/aio.css'</span></span><br><span class="line">&#125;);</span><br><span class="line">fis.match(<span class="string">'/client/static/lib/*.&#123;less,css&#125;'</span>, &#123;</span><br><span class="line">    packTo: <span class="string">'/client/static/lib/lib_aio.css'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//====================================less预编译======================================</span></span><br><span class="line"></span><br><span class="line">fis.match(<span class="string">'*.less'</span>, &#123;</span><br><span class="line">    <span class="comment">// fis-parser-less 插件进行解析</span></span><br><span class="line">    parser: fis.plugin(<span class="string">'less'</span>),</span><br><span class="line">    <span class="comment">// .less 文件后缀构建后被改成 .css 文件</span></span><br><span class="line">    rExt: <span class="string">'.css'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//==================================Sprites图合并=====================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 启用 fis-spriter-csssprites 插件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*fis.match('::package', &#123;</span><br><span class="line">    spriter: fis.plugin('csssprites')</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 对 CSS 进行图片合并</span><br><span class="line">fis.match('*.css', &#123;</span><br><span class="line">    // 给匹配到的文件分配属性 `useSprite`</span><br><span class="line">    useSprite: true</span><br><span class="line">&#125;);*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//==============================禁用Sprites/添加md5/压缩============================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//因为是后边命令覆盖前边命令，所以这个放在最后边</span></span><br><span class="line"></span><br><span class="line">fis.media(<span class="string">'debug'</span>).match(<span class="string">'*.&#123;js,css,png&#125;'</span>, &#123;</span><br><span class="line">    useHash: <span class="literal">false</span>,</span><br><span class="line">    useSprite: <span class="literal">false</span>,</span><br><span class="line">    optimizer: <span class="literal">null</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><br><br>四、发布(进入要发布的目录)<br><blockquote>fis3 release</blockquote><br>五、打开发布后的文件夹<br><blockquote>fis3 server open</blockquote><br>六、运行<br><blockquote>fis3 server start</blockquote><br>七、调试(在这种情况下就可以修改源码自动发布显示了)<br><blockquote>fis3 release -w</blockquote><br>三大功能：<br>1.资源定位：<br><blockquote>// 所有的 css—url和发布目录一致<br>fis.match(‘<strong>.css’, {<br>//发布到/static/css/xxx目录下<br>release : ‘/static/css$0’<br>});<br><br>// 所有的 css—url和发布目录不一致<br>fis.match(‘</strong>.css’, {<br>//发布到/static/css/xxx目录下<br>release : ‘/static/css$0’,<br>//访问url是/pp/static/css/xxx<br>url : ‘/pp/static/css$0’<br>});</blockquote><br>2.内容嵌入<br>给资源加 ?<strong>inline 参数来标记资源嵌入需求<br>源码<br><blockquote>&nbsp;</blockquote><br>编译后<br><br>3.声明依赖<br>目的只是产出一张资源依赖的表给后端看，设置按需加载<br>要在根目录创建一个manifest.json，内容输入</strong>RESOURCE_MAP__即可，产出依赖表就在这个文件内<br>html中注释内容（js，css注释内容也一样）<br><blockquote><!-- @require demo.js @require "demo.css" --></blockquote>
+					</div>
+
+
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/fis3/">fis3</a>, <a class="tag-link" href="/tags/others/">others</a>
+
+					</div>
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+					<a href="/2016/03/21/npm常用命令/" title="npm常用命令">&larr; Prev</a>
+
+
+
+					<a href="/2016/03/21/yog2使用总结/" title="yog2使用总结">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/21/FIS3使用总结/index.html" data-title="FIS3使用总结" data-url="/2016/03/21/FIS3使用总结/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

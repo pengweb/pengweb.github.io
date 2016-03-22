@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> 手机移动端---笔记 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" 手机移动端---笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" 手机移动端---笔记 | 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" 手机移动端---笔记 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" 手机移动端---笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" 手机移动端---笔记 | 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="http://yoursite.com/asset/img/favicon.png">
+
+	<link rel="image_src" href="http://yoursite.com/asset/img/logo.png" >
+	<meta property="og:image" content="http://yoursite.com/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/03/21/手机移动端-笔记/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+							<li class="box-menu-item"><a href="/archives"><span class="menu-item">Sitemap</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-03-21">2016-03-21</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/03/21/手机移动端-笔记/"  itemprop="url"><span class="content-title" itemprop="name">手机移动端---笔记</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<h1 id="1-像素"><a href="#1-像素" class="headerlink" title="1.像素"></a>1.像素</h1><p>设计图要按分辨率来做，分为640,720,1080等等像素的。</p>
+<p>下边来引入逻辑像素概念：</p>
+<p>苹果5的逻辑像素是：320*568</p>
+<p>苹果6的逻辑像素是：375*667</p>
+<p>苹果6+的逻辑像素是：414*736</p>
+<p>安卓的逻辑像素有很多，我们可以按照320*533和360*640来计算</p>
+<p>接下来我们就要来说一下倍率：</p>
+<p>假如设计师设计的是640像素的图，那我们以苹果5为标准来做设计，苹果5的逻辑像素是320，那么做设计的时候，就要将图纸的单位都缩小一半，才能让苹果5的显示情况和图的效果达到一致。以此类推，如果给的图纸是720的，那么就要缩放2.25倍才能达到一致！！</p>
+<h1 id="2-触摸事件"><a href="#2-触摸事件" class="headerlink" title="2.触摸事件"></a>2.触摸事件</h1><h2 id="2-1、Touch事件简介"><a href="#2-1、Touch事件简介" class="headerlink" title="2.1、Touch事件简介"></a>2.1、Touch事件简介</h2><p>pc上的web页面鼠 标会产生onmousedown、onmouseup、onmouseout、onmouseover、onmousemove的事件，但是在移动终端如 iphone、ipod Touch、ipad上的web页面触屏时会产生ontouchstart、ontouchmove、ontouchend、ontouchcancel 事件，分别对应了触屏开始、拖拽及完成触屏事件和取消。<br>当按下手指时，触发ontouchstart；<br>当移动手指时，触发ontouchmove；<br>当移走手指时，触发ontouchend。<br>当一些更高级别的事件发生的时候（如电话接入或者弹出信息）会取消当前的touch操作，即触发ontouchcancel。一般会在ontouchcancel时暂停游戏、存档等操作。</p>
+<h2 id="2-2、Touch事件与Mouse事件的出发关系"><a href="#2-2、Touch事件与Mouse事件的出发关系" class="headerlink" title="2.2、Touch事件与Mouse事件的出发关系"></a>2.2、Touch事件与Mouse事件的出发关系</h2><p>在触屏操作后，手指提起的一刹那（即发生ontouchend后），系统会判断接收到事件的element的内容是否被改变，如果内容被改变，接下来的事 件都不会触发，如果没有改变，会按照mousedown，mouseup，click的顺序触发事件。特别需要提到的是，只有再触发一个触屏事件时，才会 触发上一个事件的mouseout事件。</p>
+<h2 id="2-3、gesture事件"><a href="#2-3、gesture事件" class="headerlink" title="2.3、gesture事件"></a>2.3、gesture事件</h2><p>Gesture事件，包括手指点击（click），轻拂 （flick），双击（double-click），手指的分开、闭合（scale）、转动（rotate）等一切手指能在屏幕上做的事情，它只在有两根 或多根手指放在屏幕上的时候触发，事件处理函数中会得到一个GestureEvent类型的参数，它包含了手指的scale（两根移动过程中分开的比例） 信息和rotation（两根手指间连线转动的角度）信息。这个事件是对touch事件的更高层的封装，和touch一样，它同样包括 gesturestart，gesturechange，gestureend。<br>gesture事件触发过程：<br>Step 1、第一根手指放下，触发touchstart<br>Step 2、第二根手指放下，触发gesturestart<br>Step 3、触发第二根手指的touchstart<br>Step 4、立即触发gesturechange<br>Step 5、手指移动，持续触发gesturechange，就像鼠标在屏幕上移动的时候不停触发mousemove一样<br>Step 6、第二根手指提起，触发gestureend，以后将不会再触发gesturechange<br>Step 7、触发第二根手指的touchend<br>Step 8、触发touchstart！注意，多根手指在屏幕上，提起一根，会刷新一次全局touch！重新触发第一根手指的touchstart<br>Step 9、提起第一根手指，触发touchend</p>
+<p><strong>关键字说明：</strong></p>
+<p>clientX:触摸目标在视口中的X坐标。<br>clientY:触摸目标在视口中的Y坐标。<br>identifier：表示触摸的唯一ID。<br>pageX：触摸目标在页面中的x坐标。<br>pageY：触摸目标在页面中的y坐标。<br>screenX:触摸目标在屏幕中的x坐标。<br>screenY:触摸目标在屏幕中的y坐标。<br>target:触摸的DOM节点坐标。</p>
+<h1 id="3-meta标签"><a href="#3-meta标签" class="headerlink" title="3.meta标签"></a>3.meta标签</h1><p>关闭识别手机号</p>
+<p><meta name="format-detection" content="telephone=no"><br>关闭识别后，想识别个别的电话<br><a href="tel:13800138000" target="_blank" rel="external">13800138000</a><br>关闭邮箱识别</p>
+<p><meta content="email=no" name="format-detection"><br>删除默认的苹果工具栏和菜单栏</p>
+<p><meta name="”apple-mobile-web-app-status-bar-style”" content="black”"><br>默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）。 注意： 若值为“black-translucent”将会占据页面px位置，浮在页面上方（会覆盖页面20px高度–iphone4和itouch4的Retina屏幕为40px） 在用户把网页存为书签时，在手机HOME界面创建应用程序样式的图标</p>
+<p><link rel="apple-touch-icon" href="/static/images/identity/HTML5_Badge_64.png"> <link rel="apple-touch-icon-precomposed" href="/static/images/identity/HTML5_Badge_64.png"><br>iOS用rel=”apple-touch-icon”,android 用rel=”apple-touch-icon-precomposed”   一、meta标签相关知识 1、移动端页面设置视口宽度等于设备宽度，并禁止缩放。</p>
+<p><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><br>2、移动端页面设置视口宽度等于定宽（如640px），并禁止缩放，常用于微信浏览器页面。</p>
+<p><meta name="viewport" content="width=640,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><br>3、禁止将页面中的数字识别为电话号码</p>
+<p><meta name="format-detection" content="telephone=no"><br>4、忽略Android平台中对邮箱地址的识别</p>
+<p><meta name="format-detection" content="email=no"><br>5、当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari</p>
+<p><meta name="apple-mobile-web-app-capable" content="yes"><br><!-- ios7.0版本以后，safari上已看不到效果 --><br>6、将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</p>
+<p><meta name="apple-mobile-web-app-status-bar-style" content="black"><br><!-- 可选default、black、black-translucent --><br><strong>viewport模板</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"</span> <span class="attr">name</span>=<span class="string">"viewport"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"yes"</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"black"</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span> <span class="attr">name</span>=<span class="string">"format-detection"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"email=no"</span> <span class="attr">name</span>=<span class="string">"format-detection"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"index.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    content...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="4-CSS样式技巧"><a href="#4-CSS样式技巧" class="headerlink" title="4. CSS样式技巧"></a>4. CSS样式技巧</h1><p>1、禁止ios和android用户选中文字<br>.css{-webkit-user-select:none}<br>2、禁止ios长按时触发系统的菜单，禁止ios&amp;android长按时下载图片<br>.css{-webkit-touch-callout: none}<br>3、webkit去除表单元素的默认样式<br>.css{-webkit-appearance:none;}<br>4、修改webkit表单输入框placeholder的样式<br>input::-webkit-input-placeholder{color:#AAAAAA;}<br>input:focus::-webkit-input-placeholder{color:#EEEEEE;}<br>5、去除android a/button/input标签被点击时产生的边框 &amp; 去除ios a标签被点击时产生的半透明灰色背景<br>a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}<br>6、ios使用-webkit-text-size-adjust禁止调整字体大小<br>body{-webkit-text-size-adjust: 100%!important;}<br>7、android 上去掉语音输入按钮<br>input::-webkit-input-speech-button {display: none}<br>8、移动端定义字体，移动端没有微软雅黑字体<br>/<em> 移动端定义字体的代码 </em>/<br>body{font-family:Helvetica;}</p>
+<h1 id="5-其他技巧"><a href="#5-其他技巧" class="headerlink" title="5. 其他技巧"></a>5. 其他技巧</h1><p>1、手机拍照和上传图片<br><!-- 选择照片 --></p>
+<p><input type="file" accept="image/*"><br><!-- 选择视频 --></p>
+<p><input type="file" accept="video/*"><br>2、取消input在ios下，输入的时候英文首字母的默认大写</p>
+<p><input autocapitalize="off" autocorrect="off"><br>3、打电话和发短信<br><a href="tel:0755-10086" target="_blank" rel="external">打电话给:0755-10086</a><br><a href="sms:10086" target="_blank" rel="external">发短信给: 10086</a></p>
+<h1 id="6-CSS-reset"><a href="#6-CSS-reset" class="headerlink" title="6. CSS reset"></a>6. CSS reset</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* hcysun  */</span></span><br><span class="line">@<span class="keyword">charset</span> <span class="string">"utf-8"</span>;</span><br><span class="line"><span class="comment">/* reset */</span></span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-text-size-adjust</span>:none;</span><br><span class="line">    <span class="attribute">-webkit-user-select</span>:none;</span><br><span class="line">    <span class="attribute">-webkit-touch-callout</span>: none</span><br><span class="line">    font-family: Helvetica;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>:<span class="number">12px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span>,<span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>,<span class="selector-tag">h5</span>,<span class="selector-tag">h6</span>,<span class="selector-tag">p</span>,<span class="selector-tag">dl</span>,<span class="selector-tag">dd</span>,<span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>,<span class="selector-tag">pre</span>,<span class="selector-tag">form</span>,<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>,<span class="selector-tag">th</span>,<span class="selector-tag">td</span>,<span class="selector-tag">select</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; <span class="attribute">font-weight</span>: normal;<span class="attribute">text-indent</span>: <span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-tag">a</span>,<span class="selector-tag">button</span>,<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>,<span class="selector-tag">select</span>&#123; <span class="attribute">background</span>: none; <span class="attribute">-webkit-tap-highlight-color</span>:<span class="built_in">rgba</span>(255,0,0,0); <span class="attribute">outline</span>:none; <span class="attribute">-webkit-appearance</span>:none;&#125;</span><br><span class="line"><span class="selector-tag">em</span>&#123;<span class="attribute">font-style</span>:normal&#125;</span><br><span class="line"><span class="selector-tag">li</span>&#123;<span class="attribute">list-style</span>:none&#125;</span><br><span class="line"><span class="selector-tag">a</span>&#123;<span class="attribute">text-decoration</span>:none;&#125;</span><br><span class="line"><span class="selector-tag">img</span>&#123;<span class="attribute">border</span>:none; <span class="attribute">vertical-align</span>:top;&#125;</span><br><span class="line"><span class="selector-tag">table</span>&#123;<span class="attribute">border-collapse</span>:collapse;&#125;</span><br><span class="line"><span class="selector-tag">textarea</span>&#123; <span class="attribute">resize</span>:none; <span class="attribute">overflow</span>:auto;&#125;</span><br><span class="line"><span class="comment">/* end reset */</span></span><br></pre></td></tr></table></figure>
+<h1 id="7-flex布局"><a href="#7-flex布局" class="headerlink" title="7. flex布局"></a>7. flex布局</h1><p>1、定义弹性盒模型兼容写法<br>/<em><br>    box<br>    inline-box
+</em>/<br>display: -webkit-box;<br>display: -moz-box;<br>display: -ms-flexbox;<br>display: -o-box;<br>display: box;<br>2、box-orient 定义盒模型内伸缩项目的布局方向<br>/**</p>
+<ul>
+<li>vertical column  垂直</li>
+<li>horizontal row   水平 默认值<br><em>/<br>-webkit-box-orient: horizontal;<br>-moz-box-orient: horizontal;<br>-ms-flex-direction: row;<br>-o-box-orient: horizontal;<br>box-orient: horizontal;<br>3、box-direction 定义盒模型内伸缩项目的正序(normal默认值)、倒叙(reverse)<br>/</em> Firefox <em>/<br>display:-moz-box;<br>-moz-box-direction:reverse;<br>/</em> Safari、Opera 以及 Chrome <em>/<br>display:-webkit-box;<br>-webkit-box-direction:reverse;<br>4、box-pack 对盒子水平富裕空间的管理<br>/</em><br> start<br> end<br> center<br> justify<br><em>/<br>-webkit-box-pack: center;<br>-moz-box-pack: center;<br>-ms-flex-pack: center;<br>-o-box-pack: center;<br>box-pack: center;<br>5、box-pack 对盒子垂直方向富裕空间的管理<br>/</em><br> start<br> end<br> center<br><em>/<br>/</em> box-align <em>/<br>-webkit-box-align: center;<br>-moz-box-align: center;<br>-ms-flex-align: center;<br>-o-box-align: center;<br>box-align: center;<br>6、定义伸缩项目的具体位置<br>/</em>-moz-box-ordinal-group:1;<em>/ /</em> Firefox <em>/<br>/</em>-webkit-box-ordinal-group:1;<em>/ /</em> Safari 和 Chrome <em>/<br>.box div:nth-of-type(1){-webkit-box-ordinal-group:1;}<br>.box div:nth-of-type(2){-webkit-box-ordinal-group:2;}<br>.box div:nth-of-type(3){-webkit-box-ordinal-group:3;}<br>.box div:nth-of-type(4){-webkit-box-ordinal-group:4;}<br>.box div:nth-of-type(5){-webkit-box-ordinal-group:5;}<br>7、定义伸缩项目占空间的份数<br>-moz-box-flex:2.0; /</em> Firefox <em>/<br>-webkit-box-flex:2.0; /</em> Safari 和 Chrome */</li>
+</ul>
+<p>.box div:nth-of-type(1){-webkit-box-flex:1;}<br>.box div:nth-of-type(2){-webkit-box-flex:2;}<br>.box div:nth-of-type(3){-webkit-box-flex:3;}<br>.box div:nth-of-type(4){-webkit-box-flex:4;}<br>.box div:nth-of-type(5){-webkit-box-flex:5;}</p>
+
+					</div>
+
+
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/note/">note</a>, <a class="tag-link" href="/tags/笔记，移动端，手机/">笔记，移动端，手机</a>
+
+					</div>
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+					<a href="/2016/03/21/yum常用命令/" title="yum常用命令">&larr; Prev</a>
+
+
+
+					<a href="/2016/03/21/jade学习笔记/" title="jade学习笔记">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/21/手机移动端-笔记/index.html" data-title="手机移动端---笔记" data-url="/2016/03/21/手机移动端-笔记/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
