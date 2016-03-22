@@ -126,6 +126,7 @@ pre .javascript .function {
 .content pre,
 .content code {
   font-family: "Liberation Mono", monospace;
+  font-size: 12px;
 }
 .content code {
   background: #f0f0f0;
@@ -521,13 +522,15 @@ article li ul {
 }
 .content blockquote {
   font-style: italic;
-  font-size: 24px;
+  font-size: 12px;
   font-family: serief;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
   border: 1px dashed #dcdcdc;
   margin-top: 10px;
   margin-bottom: 10px;
+  background: #fff;
+  padding: 10px 10px;
 }
 .content .pullquote {
   text-align: left;
