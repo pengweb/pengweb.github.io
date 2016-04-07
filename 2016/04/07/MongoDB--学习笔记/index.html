@@ -6,16 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title> 张鹏的全栈之路 </title>
-	<meta property="og:title" content=" 张鹏的全栈之路 " />
-	<meta name="twitter:title" content=" 张鹏的全栈之路 ">
+	<title> MongoDB--学习笔记 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" MongoDB--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" MongoDB--学习笔记 | 张鹏的全栈之路 ">
 
 	<meta property="og:type" content="article">
 	<meta name="twitter:card" content="summary">
 
-	<meta name="description" content=" 张鹏的全栈之路 ">
-	<meta property="og:description" content=" 张鹏的全栈之路 " />
-	<meta name="twitter:description" content=" 张鹏的全栈之路 " />
+	<meta name="description" content=" MongoDB--学习笔记 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" MongoDB--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" MongoDB--学习笔记 | 张鹏的全栈之路 " />
 
 	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
 
@@ -100,14 +100,11 @@
 
 
 					<h2 class="box-content-title">
-						<a href="/2016/04/07/MongoDB--学习笔记/"  itemprop="url"><span class="content-title" itemprop="name">No Title</span></a>
+						<a href="/2016/04/07/MongoDB--学习笔记/"  itemprop="url"><span class="content-title" itemprop="name">MongoDB--学习笔记</span></a>
 					</h2>
 
 					<div class="content post-item-content" itemprop="articleBody">
 
-<hr>
-<p>title: MongoDB–学习笔记<br>date: 2016-04-07 15:42:18<br>tags: [nodejs,笔记,note,mongoDB]</p>
-<hr>
 <p>一、创建数据目录<br><figure class="highlight js"><figcaption><span>c:\data\bd\```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">二、命令行下运行 MongoDB 服务器</span><br><span class="line"><span class="string">``</span><span class="string">`js mongod.exe --dbpath c:\data\db //有的时候可以去掉.exe</span></span><br></pre></td></tr></table></figure></p>
 <p>三、将MongoDB服务器作为Windows服务运行<br><figure class="highlight js"><figcaption><span>mongod.exe</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--bind_ip yourIPadress</span><br><span class="line">--port yourPortNumber</span><br><span class="line">--logpath <span class="string">"C:\data\mongodb.log"</span></span><br><span class="line">--logappend --dbpath <span class="string">"C:\data\db"</span></span><br><span class="line">--serviceName <span class="string">"YourServiceName"</span></span><br><span class="line">--serviceDisplayName <span class="string">"YourServiceName"</span></span><br><span class="line">--install</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight js"><figcaption><span>mongod.exe --logpath "C:\data\mongodb.log" --logappend --dbpath "C:\data\db" --serviceName "zhp" --serviceDisplayName "zhpdisplay" --install```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">--bind_ip 绑定服务IP，若绑定<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>，则只能本机访问，不指定默认本地所有IP</span><br><span class="line">--logpath 定MongoDB日志文件，注意是指定文件不是目录</span><br><span class="line">--logappend 使用追加的方式写日志</span><br><span class="line">--dbpath 指定数据库路径</span><br><span class="line">--port 指定服务端口号，默认端口<span class="number">27017</span></span><br><span class="line">--serviceName 指定服务名称</span><br><span class="line">--serviceDisplayNam 指定服务名称，有多个mongodb服务时执行。</span><br><span class="line">--install 指定作为一个Windows服务安装。</span><br><span class="line"></span><br><span class="line">MongoDB后台管理 Shell</span><br><span class="line">如果你需要进入MongoDB后台管理，你需要先打开mongodb装目录的下的bin目录，然后执行mongo.exe文件，MongoDB Shell是MongoDB自带的交互式Javascript shell,用来对MongoDB进行操作和管理的交互式环境。</span><br><span class="line">当你进入mongoDB后台后，它默认会链接到 test 文档（数据库）：</span><br><span class="line"><span class="string">``</span><span class="string">`js &gt; mongo</span><br><span class="line">MongoDB shell version: 3.0.6</span><br><span class="line">connecting to: test</span><br><span class="line">……</span></span><br></pre></td></tr></table></figure>
@@ -394,6 +391,12 @@ update()的第二个参数update是一个对象，能指定更新时用的运算
 					</div>
 
 
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/mongoDB/">mongoDB</a>, <a class="tag-link" href="/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/tags/note/">note</a>, <a class="tag-link" href="/tags/笔记/">笔记</a>
+
+					</div>
+
 
 
 				</article>
@@ -405,9 +408,11 @@ update()的第二个参数update是一个对象，能指定更新时用的运算
 			<div class="box-post-nav">
 
 
+					<a href="/2016/04/07/Mongoose--学习笔记/" title="Mongoose--学习笔记">&larr; Prev</a>
 
 
-					<a href="/2016/04/07/hello-world/" title="Hello World">Next &rarr;</a>
+
+					<a href="/2016/04/07/Nodejs--学习笔记/" title="Nodejs--学习笔记">Next &rarr;</a>
 
 
 			</div>
@@ -416,7 +421,7 @@ update()的第二个参数update是一个对象，能指定更新时用的运算
 		
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/07/MongoDB--学习笔记/index.html" data-title="No Title" data-url="/2016/04/07/MongoDB--学习笔记/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/07/MongoDB--学习笔记/index.html" data-title="MongoDB--学习笔记" data-url="/2016/04/07/MongoDB--学习笔记/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

@@ -6,16 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title> 张鹏的全栈之路 </title>
-	<meta property="og:title" content=" 张鹏的全栈之路 " />
-	<meta name="twitter:title" content=" 张鹏的全栈之路 ">
+	<title> Express--学习笔记 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" Express--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" Express--学习笔记 | 张鹏的全栈之路 ">
 
 	<meta property="og:type" content="article">
 	<meta name="twitter:card" content="summary">
 
-	<meta name="description" content=" 张鹏的全栈之路 ">
-	<meta property="og:description" content=" 张鹏的全栈之路 " />
-	<meta name="twitter:description" content=" 张鹏的全栈之路 " />
+	<meta name="description" content=" Express--学习笔记 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" Express--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" Express--学习笔记 | 张鹏的全栈之路 " />
 
 	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
 
@@ -100,14 +100,11 @@
 
 
 					<h2 class="box-content-title">
-						<a href="/2016/04/07/Express-学习笔记/"  itemprop="url"><span class="content-title" itemprop="name">No Title</span></a>
+						<a href="/2016/04/07/Express-学习笔记/"  itemprop="url"><span class="content-title" itemprop="name">Express--学习笔记</span></a>
 					</h2>
 
 					<div class="content post-item-content" itemprop="articleBody">
 
-<hr>
-<p>title: Express–学习笔记<br>date: 2016-04-07 15:43:03<br>tags: [Nodejs,笔记,note,express]</p>
-<hr>
 <p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。<br>使用 Express 可以快速地搭建一个完整功能的网站。<br>Express 框架核心特性：<br>可以设置中间件来响应 HTTP 请求。<br>定义了路由表用于执行不同的 HTTP 请求动作。<br>可以通过向模板传递参数来动态渲染 HTML 页面。</p>
 <p>第一个 Express 框架实例<br>接下来我们使用 Express 框架来输出 “Hello World”。<br>以下实例中我们引入了 express 模块，并在客户端发起请求后，响应 “Hello World” 字符串。</p>
 <figure class="highlight js"><figcaption><span>var express = require('express');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">   res.send(<span class="string">'Hello World'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8081</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> host = server.address().address</span><br><span class="line">  <span class="keyword">var</span> port = server.address().port</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -140,6 +137,12 @@
 					</div>
 
 
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/Nodejs/">Nodejs</a>, <a class="tag-link" href="/tags/express/">express</a>, <a class="tag-link" href="/tags/note/">note</a>, <a class="tag-link" href="/tags/笔记/">笔记</a>
+
+					</div>
+
 
 
 				</article>
@@ -164,7 +167,7 @@
 		
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/07/Express-学习笔记/index.html" data-title="No Title" data-url="/2016/04/07/Express-学习笔记/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/07/Express-学习笔记/index.html" data-title="Express--学习笔记" data-url="/2016/04/07/Express-学习笔记/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
