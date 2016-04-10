@@ -129,10 +129,11 @@ pre .javascript .function {
   font-size: 13px;
 }
 .content code {
-  background: #f0f0f0;
+  background: #fff;
   text-shadow: 0 1px #fff;
   font-size: 0.85em;
   padding: 0 0.3em;
+  margin: 0 0.3em;
   border: 1px solid #dcdcdc;
   border-radius: 3px;
 }
@@ -171,15 +172,14 @@ pre .javascript .function {
 }
 .content .highlight .gutter pre .line {
   color: #c5c5c5;
-}
-.content .highlight .code .line {
-  padding-right: 40px;
-}
-.content .highlight .line {
   height: 22.400000000000002px;
-  padding-left: 20px;
+  padding-left: 15px;
   font-family: Consolas, Arial, 'Microsoft Yahei';
   white-space: nowrap;
+}
+.content .highlight .code {
+  padding-right: 40px;
+  padding-left: 10px;
 }
 .content .gist {
   margin: 0 -20px;
