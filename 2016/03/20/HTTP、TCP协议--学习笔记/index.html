@@ -178,8 +178,9 @@
 <li>此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，等这些<strong>内容完成载入并且所有异步脚本完成载入和执行</strong>，document.readState变为complete,window触发load事件</li>
 </ol>
 </li>
-<li><strong>显示页面</strong>（HTML解析过程中会逐步显示页面）<h1 id="1-TCP-HTTP-UDP三者的关系"><a href="#1-TCP-HTTP-UDP三者的关系" class="headerlink" title="1.TCP HTTP UDP三者的关系"></a>1.TCP HTTP UDP三者的关系</h1>都是通信协议，也就是通信时所遵守的规则，只有双方按照这个规则“说话”，对方才能理解或为之服务。<br>TCP/IP是个协议组，可分为四个层次：网络接口层、网络层、传输层和应用层。<br>在<strong>网络层</strong>有IP协议、ICMP协议、ARP协议、RARP协议和BOOTP协议。<br>在<strong>传输层</strong>中有TCP协议与UDP协议。<br>在<strong>应用层</strong>有FTP、HTTP、TELNET、SMTP、DNS等协议。<br>因此，HTTP本身就是一个协议，是从Web服务器传输超文本到本地浏览器的传送协议。</li>
+<li><strong>显示页面</strong>（HTML解析过程中会逐步显示页面）</li>
 </ol>
+<h1 id="1-TCP-HTTP-UDP三者的关系"><a href="#1-TCP-HTTP-UDP三者的关系" class="headerlink" title="1.TCP HTTP UDP三者的关系"></a>1.TCP HTTP UDP三者的关系</h1><p>都是通信协议，也就是通信时所遵守的规则，只有双方按照这个规则“说话”，对方才能理解或为之服务。<br>TCP/IP是个协议组，可分为四个层次：网络接口层、网络层、传输层和应用层。<br>在<strong>网络层</strong>有IP协议、ICMP协议、ARP协议、RARP协议和BOOTP协议。<br>在<strong>传输层</strong>中有TCP协议与UDP协议。<br>在<strong>应用层</strong>有FTP、HTTP、TELNET、SMTP、DNS等协议。<br>因此，HTTP本身就是一个协议，是从Web服务器传输超文本到本地浏览器的传送协议。</p>
 <h1 id="2-socket"><a href="#2-socket" class="headerlink" title="2.socket"></a>2.socket</h1><p>套接字（socket）是通信的基石，是支持TCP/IP协议的网络通信的基本操作单元。它是网络通信过程中端点的抽象表示，<strong>包含</strong>进行网络通信必须的<strong>五种信息</strong>：<strong>连接使用的协议，本地主机的IP地址，本地进程的协议端口，远地主机的IP地址，远地进程的协议端口。</strong></p>
 <p>应用层通过传输层进行数据通信时，TCP会遇到同时为多个应用程序进程<strong>提供并发服务</strong>的问题。多个TCP连接或多个应用程序进程可能需要通过<strong>同一个TCP协议端口</strong>传输数据。为了区别不同的应用程序进程和连接，许多计算机操作系统为应用程序与TCP／IP协议交互提供了套接字(Socket)接口。应用层可以和传输层通过Socket接口，<strong>区分来自不同应用程序进程或网络连接的通信，实现数据传输的并发服务。
 </strong><br>socket只是一种连接模式，不是协议,tcp,udp，简单的说（虽然不准确）是两个最基本的协议,很多其它协议都是基于这两个协议如，http就是基于tcp的，<strong>用socket可以创建tcp连接</strong>，也可以创建udp连接，这意味着，用socket可以创建任何协议的连接，因为其它协议都是基于此的。</p>
