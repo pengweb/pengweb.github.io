@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" 张鹏的全栈之路 ">
+	<meta property="og:description" content=" 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
+
+	<link rel="image_src" href="/asset/img/logo.png" >
+	<meta property="og:image" content="/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/04/11/ECMAScript6--学习笔记/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-04-11">2016-04-11</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/04/11/ECMAScript6--学习笔记/"  itemprop="url"><span class="content-title" itemprop="name">No Title</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<hr>
+<p>title: ECMAScript6–学习笔记<br>date: 2016-04-11 09:58:05<br>tags: [js,javascript,es6,ecmascript6,note]</p>
+<hr>
+<h1 id="1-let、const和块级作用域"><a href="#1-let、const和块级作用域" class="headerlink" title="1.let、const和块级作用域"></a>1.let、const和块级作用域</h1><h2 id="let-命令"><a href="#let-命令" class="headerlink" title="let 命令"></a>let 命令</h2><ol>
+<li>只在<code>let</code>命令所在的<strong>代码块内</strong>有效。</li>
+<li><p>for循环内用let声明，类似于bind(),当前循环有效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>](); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不存在变量提升</p>
+</li>
+<li>暂时性死区：在作用域内let声明，则不再受外部的影响(内部也不会提升的)</li>
+<li>暂时性死区的 <code>typeof</code> 有可能不存在，如果let在typeof之后</li>
+<li>函数参数默认值也存在<strong>死区</strong></li>
+<li>不允许重复声明，重复声明会报错–因此不能在<strong>函数内部</strong>再次声明参数，除非再增加一个块级作用域{}</li>
+</ol>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><ol>
+<li>一个<code>{}</code>代表一个块级作用域</li>
+<li>if语句的{}也是一个块级作用域，所以它不再影响外部变量</li>
+<li>外层也访问不到内层作用域</li>
+<li>块级作用域就可以替代自执行函数</li>
+<li><p>块级作用域的外部不能调用块级作用域内部定义的<strong>函数</strong>，函数声明不再提升，不过可以通过下边这样处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> f;</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="string">'secret'</span>;</span><br><span class="line">  f = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">f() <span class="comment">// "secret"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ES5在if这种语句内声明函数是会报错的，但是ES6就会将语句的{}视为块级作用域，所以内部再定义函数就不会报错了</p>
+</li>
+</ol>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><ol>
+<li>const也用来声明变量，但是声明的是常量。</li>
+<li>一旦声明，常量的值就<strong>不能改变</strong>–后边不可以再进行赋值或改变指针（但可以改变属性）</li>
+<li>可以通过<code>Object.freeze()</code>方法来进行冻结，冻结后就不可以改变属性了-仅仅只是对象本身冻结</li>
+</ol>
+<h2 id="跨模块常量"><a href="#跨模块常量" class="headerlink" title="跨模块常量"></a>跨模块常量</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// constants.js 模块</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> A = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> B = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> C = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test1.js 模块</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> constants <span class="keyword">from</span> <span class="string">'./constants'</span>;    <span class="comment">//方法一</span></span><br><span class="line"><span class="built_in">console</span>.log(constants.A); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(constants.B); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// test2.js 模块</span></span><br><span class="line"><span class="keyword">import</span> &#123;A, B&#125; <span class="keyword">from</span> <span class="string">'./constants'</span>;             <span class="comment">//方法二</span></span><br><span class="line"><span class="built_in">console</span>.log(A); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(B); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h2 id="全局对象属性"><a href="#全局对象属性" class="headerlink" title="全局对象属性"></a>全局对象属性</h2><ol>
+<li>var命令和function命令声明的全局变量，依旧是全局对象的属性；</li>
+<li>let命令、const命令、class命令声明的全局变量，不属于全局对象的属性。</li>
+<li><code>window.</code> 和不带标识符的声明，仍是全局变量</li>
+</ol>
+
+					</div>
+
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+
+
+					<a href="/2016/04/07/hello-world/" title="Hello World">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/11/ECMAScript6--学习笔记/index.html" data-title="No Title" data-url="/2016/04/11/ECMAScript6--学习笔记/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
