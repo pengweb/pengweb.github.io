@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> Centos+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" Centos+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" Centos+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" Centos+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" Centos+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" Centos+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
+
+	<link rel="image_src" href="/asset/img/logo.png" >
+	<meta property="og:image" content="/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/03/21/Centos-Nodejs-Xampp服务器环境搭建/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-03-21">2016-03-21</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/03/21/Centos-Nodejs-Xampp服务器环境搭建/"  itemprop="url"><span class="content-title" itemprop="name">Centos+Nodejs/Xampp服务器环境搭建</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<h3>Linux配置:</h3>
+
+<h4>首先配置虚拟机</h4>
+
+<p>编辑-虚拟网络编辑器-修改vmnet0为桥接模式<br>虚拟机-设置-网络适配器-修改为桥接模式</p>
+<p></p><h4>配置Linux文件</h4><br>cd ..   先返回根目录<br>cd etc/sysconfig/network-scripts<br>vi ifcfg-eno<em>    修改这个文件</em>是不同Linux版本这个尾号不同，自己查<br>将内容改为如图下<br><img src="/images/11111.jpg" alt=""><br>里边很多配置可以不用，可以自行百度<p></p>
+<p>修改域名服务器-避免ping不通网址<br>cd etc/resolv.conf<br>添加下边这个</p>
+<pre>
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</pre>
+
+
+<p>安装epel-因为Linux自己的yum发行版不全，所以通过这个扩展</p>
+<pre>
+yum install epel-release
+</pre>
+
+
+
+<h3>安装NodeJS:</h3>
+
+<pre>
+yum install nodejs
+</pre>
+
+
+<h3>安装Xampp:</h3>
+
+<blockquote>cd /home<br>cd /zhp<br>cd Desktop<br>chmod a+x xampp```````.run<br>sh 文件名-这个不能执行-直接输入文件名也不能执行<br>./文件名 执行安装<br>ls当前文件夹<br>su - 获取权限<br>cd -返回上一级目录</blockquote><br>每次执行：<br><blockquote>cd /opt<br>cd lampp<br>sudo ./manager-linux-x64.run</blockquote>
+
+
+
+<h3>配置子目录多站点:</h3>
+
+
+<p>经常需要在本地调试网站，却又不喜欢在<a href="http://localhost/" target="_blank" rel="external">http://localhost/</a>网站的文件夹名，且几个比较重要的项目我想直接用端口号以示区分，想达到的效果如下：<br><a href="http://localhost/" target="_blank" rel="external">http://localhost/</a>     默认80端口的时候访问的是D:\目录下的A网站<br><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a>    8080端口的时候访问的是E:\目录下的B网站<br>以此类推，网站目录可以存放在硬盘下的任何地方。<br>实现的过程如下：<br>1、打开apache的httpd.conf文件（有的时候是在etc/目录下），在Listen 80处另起一行输入Listen 8080 监听8080端口，如需其他端口需逐个添加：</p>
+<p><blockquote>Listen 80<br>Listen 1000<br>Listen 1001<br>Listen 1002<br>…</blockquote><br>2.如果上边httpd.conf文件是在etc里找到的，那就在apache目录下的httpd.conf文件内添加一行</p>
+<p><blockquote>Include conf/extra/httpd-vhosts.conf   来设置启动虚拟机</blockquote><br>如果在etc目录下的httpd.conf文件里找到这句代码，检查他前边是不是有#，有的话去掉就行了</p>
+<p>3.在etc/extra/httpd-vhosts.conf   这个文件里添加以下代码</p>
+<p><blockquote>&lt;VirtualHost *:1003&gt;<br>DocumentRoot “/opt/lampp/htdocs/work2”<br>ServerName localhost                         用ServerAlias是子域名像什么www或者blog什么的 不是pengweb.net<br>&lt;/VirtualHost&gt;                                         上边这部分</blockquote></p>
+<p>&lt;Directory “/opt/lampp/htdocs/work2”&gt;<br>Options Indexes FollowSymLinks Includes ExecCGI<br>AllowOverride All<br>Order allow,deny<br>Allow from all<br>&lt;/Directory&gt;</p>
+<p>NameVirtualHost <em>:80                             下边这个是必须添加的，这个我给删了 但是也没事<br>&lt;VirtualHost </em>:80&gt;<br>DocumentRoot “/opt/lampp/htdocs/“    这个是系统默认的存放网站文件的根目录<br>ServerName localhost<br>&lt;/VirtualHost&gt;<br>下边是网上搜集的，但是我有报错，所以只做修改参考，根据不同环境可能需要用到</p>
+<p>在httpd.conf文件最后一行添加：</p>
+<p><blockquote>NameVirtualhost localhost:8080 # 虚拟主机端口            这里有的环境不用加，会报错<br>&lt;virtualhost localhost:8080&gt;<br>documentroot E:/sk  #这里就是你的网站目录绝对路径了哦~注意斜杠的方向<br>servername locahost:8080 #对应监听的端口<br>&lt;/virtualhost&gt;</blockquote></p>
+<p>&lt;Directory “E:/sk”&gt;<br>Options Indexes FollowSymLinks<br>AllowOverride All #允许URL重写<br>Order allow,deny<br>Allow from all<br>&lt;/Directory&gt;<br>完毕后记得重启apache，然后再浏览器输入<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 就可以访问到E:/sk下的网站了</p>
+<h3>数据库配置：</h3>
+
+
+<p>今天在学习使用chmod命令时候把/var/www以及子目录的权限改为了777，后来再打开就出现了以下错误：</p>
+<div><br><div><span style="color: #990030;">Wrong permissions on configuration file, should not be world writable!</span></div><br><div></div><br><div>后来在网上查了查，原来<span style="color: #9c5a3c;"><b>phpmyadmin必须在755权限</b></span>下才可以运行。</div><br><div></div><br><div>解决办法：</div><br><blockquote><br><div>cd /var/www</div><br><div>sudo chmod -R 755 phpmyadmin</div></blockquote><br><div></div><br><div>再访问，成功！</div><br><div></div><br><div>数据库在首页那选—–用户—然后添加用户—-填用户名，密码，  然后创建一个数据库名</div><br><div></div>
+
+<h3>安装Wordpress:</h3>
+
+<div>在安装文档的根目录下<span style="color: #ff0000;"><strong>删除wp-config.php</strong></span>   然后直接访问网址就进入安装步骤了很简单。</div><br></div>
+					</div>
+
+
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/centos/">centos</a>, <a class="tag-link" href="/tags/linux/">linux</a>, <a class="tag-link" href="/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/tags/xampp/">xampp</a>, <a class="tag-link" href="/tags/服务器/">服务器</a>
+
+					</div>
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+					<a href="/2016/03/21/Ejs--学习笔记/" title="Ejs--学习笔记">&larr; Prev</a>
+
+
+
+					<a href="/2016/03/20/正则表达式--学习笔记/" title="正则表达式--学习笔记">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/21/Centos-Nodejs-Xampp服务器环境搭建/index.html" data-title="Centos+Nodejs/Xampp服务器环境搭建" data-url="/2016/03/21/Centos-Nodejs-Xampp服务器环境搭建/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

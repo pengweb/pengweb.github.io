@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> Express--学习笔记 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" Express--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" Express--学习笔记 | 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" Express--学习笔记 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" Express--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" Express--学习笔记 | 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
+
+	<link rel="image_src" href="/asset/img/logo.png" >
+	<meta property="og:image" content="/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/04/07/Express-学习笔记/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-04-07">2016-04-07</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/04/07/Express-学习笔记/"  itemprop="url"><span class="content-title" itemprop="name">Express--学习笔记</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<p>Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。<br>使用 Express 可以快速地搭建一个完整功能的网站。<br>Express 框架核心特性：<br>可以设置中间件来响应 HTTP 请求。<br>定义了路由表用于执行不同的 HTTP 请求动作。<br>可以通过向模板传递参数来动态渲染 HTML 页面。</p>
+<p>第一个 Express 框架实例<br>接下来我们使用 Express 框架来输出 “Hello World”。<br>以下实例中我们引入了 express 模块，并在客户端发起请求后，响应 “Hello World” 字符串。</p>
+<figure class="highlight js"><figcaption><span>var express = require('express');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">   res.send(<span class="string">'Hello World'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8081</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> host = server.address().address</span><br><span class="line">  <span class="keyword">var</span> port = server.address().port</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>请求和响应<br>Express 应用使用回调函数的参数： request 和 response 对象来处理请求和响应的数据。<br>app.get(‘/‘, function (req, res) {<br>   // –<br>})<br>request 和 response 对象的具体介绍：<br>Request 对象 - request 对象表示 HTTP 请求，包含了请求查询字符串，参数，内容，HTTP 头部等属性。常见属性有：<br>req.app：当callback为外部文件时，用req.app访问express的实例<br>req.baseUrl：获取路由当前安装的URL路径<br>req.body / req.cookies：获得「请求主体」/ Cookies<br>req.fresh / req.stale：判断请求是否还「新鲜」<br>req.hostname / req.ip：获取主机名和IP地址<br>req.originalUrl：获取原始请求URL<br>req.params：获取路由的parameters<br>req.path：获取请求路径<br>req.protocol：获取协议类型<br>req.query：获取URL的查询参数串<br>req.route：获取当前匹配的路由<br>req.subdomains：获取子域名<br>req.accpets（）：检查请求的Accept头的请求类型<br>req.acceptsCharsets / req.acceptsEncodings / req.acceptsLanguages<br>req.get（）：获取指定的HTTP请求头<br>req.is（）：判断请求头Content-Type的MIME类型<br>Response 对象 - response 对象表示 HTTP 响应，即在接收到请求时向客户端发送的 HTTP 响应数据。常见属性有：<br>res.app：同req.app一样<br>res.append（）：追加指定HTTP头<br>res.set（）在res.append（）后将重置之前设置的头<br>res.cookie（name，value [，option]）：设置Cookie<br>opition: domain / expires / httpOnly / maxAge / path / secure / signed<br>res.clearCookie（）：清除Cookie<br>res.download（）：传送指定路径的文件<br>res.get（）：返回指定的HTTP头<br>res.json（）：传送JSON响应<br>res.jsonp（）：传送JSONP响应<br>res.location（）：只设置响应的Location HTTP头，不设置状态码或者close response<br>res.redirect（）：设置响应的Location HTTP头，并且设置状态码302<br>res.send（）：传送HTTP响应<br>res.sendFile（path [，options] [，fn]）：传送指定路径的文件 -会自动根据文件extension设定Content-Type<br>res.set（）：设置HTTP头，传入object可以一次设置多个头<br>res.status（）：设置HTTP状态码<br>res.type（）：设置Content-Type的MIME类型</p>
+<p>路由<br>我们已经了解了 HTTP 请求的基本应用，而路由决定了由谁(指定脚本)去响应客户端请求。<br>在HTTP请求中，我们可以通过路由提取出请求的URL以及GET/POST参数。<br>接下来我们扩展 Hello World，添加一些功能来处理更多类型的 HTTP 请求。</p>
+<figure class="highlight js"><figcaption><span>var express = require('express');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line"><span class="comment">//  主页输出 "Hello World"</span></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"主页 GET 请求"</span>);</span><br><span class="line">    res.send(<span class="string">'Hello GET'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//  POST 请求</span></span><br><span class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"主页 POST 请求"</span>);</span><br><span class="line">    res.send(<span class="string">'Hello POST'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//  /del_user 页面响应</span></span><br><span class="line">app.delete(<span class="string">'/del_user'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"/del_user 响应 DELETE 请求"</span>);</span><br><span class="line">    res.send(<span class="string">'删除页面'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//  /list_user 页面 GET 请求</span></span><br><span class="line">app.get(<span class="string">'/list_user'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"/list_user GET 请求"</span>);</span><br><span class="line">    res.send(<span class="string">'用户列表页面'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对页面 abcd, abxcd, ab123cd, 等响应 GET 请求</span></span><br><span class="line">app.get(<span class="string">'/ab*cd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"/ab*cd GET 请求"</span>);</span><br><span class="line">    res.send(<span class="string">'正则匹配'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8081</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> host = server.address().address</span><br><span class="line">    <span class="keyword">var</span> port = server.address().port</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>静态文件<br>Express 提供了内置的中间件 express.static 来设置静态文件如：图片， CSS, JavaScript 等。<br>你可以使用 express.static 中间件来设置静态文件路径。例如，如果你将图片， CSS, JavaScript 文件放在 public 目录下，你可以这么写：</p>
+<figure class="highlight js"><figcaption><span>app.use(express.static('public'));```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">我们可以到 public/images 目录下放些图片,如下所示：</span><br><span class="line">node_modules</span><br><span class="line">server.js</span><br><span class="line">public/</span><br><span class="line">public/images</span><br><span class="line">public/images/logo.png</span><br><span class="line">让我们再修改下 <span class="string">"Hello Word"</span> 应用添加处理静态文件的功能。</span><br><span class="line">创建 express_demo3.js 文件，代码如下所示：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`js var express = require('express');</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.static('public'));</span><br><span class="line"></span><br><span class="line">app.get('/', function (req, res) &#123;</span><br><span class="line">   res.send('Hello World');</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var server = app.listen(8081, function () &#123;</span><br><span class="line"></span><br><span class="line">  var host = server.address().address</span><br><span class="line">  var port = server.address().port</span><br><span class="line"></span><br><span class="line">  console.log("应用实例，访问地址为 http://%s:%s", host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span></span><br></pre></td></tr></table></figure>
+<p>执行以上代码：<br>$ node express_demo3.js<br>应用实例，访问地址为 <a href="http://0.0.0.0:8081" target="_blank" rel="external">http://0.0.0.0:8081</a><br>执行以上代码：<br>在浏览器中访问 <a href="http://127.0.0.1:8081/images/logo.png" target="_blank" rel="external">http://127.0.0.1:8081/images/logo.png</a></p>
+<p>GET 方法<br>以下实例演示了在表单中通过 GET 方法提交两个参数，我们可以使用 server.js 文件内的 process_get 路由器来处理输入：<br>index.htm 文件代码如下：</p>
+<figure class="highlight js"><figcaption><span><form action="http://127.0.0.1:8081/process_get" method="GET"></form></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">First Name: &lt;input type="text" name="first_name"&gt;  &lt;br&gt;</span><br><span class="line"></span><br><span class="line">Last Name: &lt;input type="text" name="last_name"&gt;</span><br><span class="line">&lt;input type="submit" value="Submit"&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>server.js 文件代码如下:</p>
+<figure class="highlight js"><figcaption><span>var express = require('express');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.static(<span class="string">'public'</span>));</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/index.htm'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">   res.sendFile( __dirname + <span class="string">"/"</span> + <span class="string">"index.htm"</span> );</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/process_get'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 输出 JSON 格式</span></span><br><span class="line">   response = &#123;</span><br><span class="line">       first_name:req.query.first_name,</span><br><span class="line">       last_name:req.query.last_name</span><br><span class="line">   &#125;;</span><br><span class="line">   <span class="built_in">console</span>.log(response);</span><br><span class="line">   res.end(<span class="built_in">JSON</span>.stringify(response));</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8081</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> host = server.address().address</span><br><span class="line">  <span class="keyword">var</span> port = server.address().port</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>执行以上代码：<br>node server.js<br>应用实例，访问地址为 <a href="http://0.0.0.0:8081" target="_blank" rel="external">http://0.0.0.0:8081</a><br>浏览器访问 <a href="http://127.0.0.1:8081/index.htm" target="_blank" rel="external">http://127.0.0.1:8081/index.htm</a></p>
+<p>POST 方法<br>以下实例演示了在表单中通过 POST 方法提交两个参数，我们可以使用 server.js 文件内的 process_get 路由器来处理输入：<br>index.htm 文件代码修改如下：</p>
+<figure class="highlight js"><figcaption><span><form action="http://127.0.0.1:8081/process_post" method="POST"></form></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">First Name: &lt;input type="text" name="first_name"&gt;  &lt;br&gt;</span><br><span class="line"></span><br><span class="line">Last Name: &lt;input type="text" name="last_name"&gt;</span><br><span class="line">&lt;input type="submit" value="Submit"&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>server.js 文件代码修改如下:</p>
+<figure class="highlight js"><figcaption><span>var express = require('express');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 application/x-www-form-urlencoded 编码解析</span></span><br><span class="line"><span class="keyword">var</span> urlencodedParser = bodyParser.urlencoded(&#123; extended: <span class="literal">false</span> &#125;)</span><br><span class="line"></span><br><span class="line">app.use(express.static(<span class="string">'public'</span>));</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/index.htm'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">   res.sendFile( __dirname + <span class="string">"/"</span> + <span class="string">"index.htm"</span> );</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/process_post'</span>, urlencodedParser, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;        <span class="comment">//注意这个参数</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 输出 JSON 格式</span></span><br><span class="line">   response = &#123;</span><br><span class="line">       first_name:req.body.first_name,      <span class="comment">//注意body</span></span><br><span class="line">       last_name:req.body.last_name</span><br><span class="line">   &#125;;</span><br><span class="line">   <span class="built_in">console</span>.log(response);</span><br><span class="line">   res.end(<span class="built_in">JSON</span>.stringify(response));</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8081</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> host = server.address().address</span><br><span class="line">  <span class="keyword">var</span> port = server.address().port</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>执行以上代码：<br>$ node express_demo.js<br>应用实例，访问地址为 <a href="http://0.0.0.0:8081" target="_blank" rel="external">http://0.0.0.0:8081</a><br>浏览器访问 <a href="http://127.0.0.1:8081/index.htm" target="_blank" rel="external">http://127.0.0.1:8081/index.htm</a></p>
+<p>文件上传<br>以下我们创建一个用于上传文件的表单，使用 POST 方法，表单 enctype 属性设置为 multipart/form-data。<br>index.htm 文件代码修改如下：</p>
+<p></p><h3>文件上传：</h3><br>选择一个文件上传: <br><p></p>
+<figure class="highlight js"><figcaption><span><form action="/file_upload" method="post" enctype="multipart/form-data"></form></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"file"</span> name=<span class="string">"image"</span> size=<span class="string">"50"</span> /&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传文件"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>server.js 文件代码修改如下:</p>
+<figure class="highlight js"><figcaption><span>var express = require('express');</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);                       <span class="comment">//处理raw,json,txt,url数据</span></span><br><span class="line"><span class="keyword">var</span> multer  = <span class="built_in">require</span>(<span class="string">'multer'</span>);            <span class="comment">//用于处理 enctype="multipart/form-data"（设置表单的MIME编码）的表单数据</span></span><br><span class="line"></span><br><span class="line">app.use(express.static(<span class="string">'public'</span>));                             <span class="comment">//可以没有</span></span><br><span class="line">app.use(bodyParser.urlencoded(&#123; extended: <span class="literal">false</span> &#125;));   <span class="comment">//// 创建 application/x-www-form-urlencoded 编码解析</span></span><br><span class="line">app.use(multer(&#123; dest: <span class="string">'/tmp/'</span>&#125;).array(<span class="string">'image'</span>));      <span class="comment">//</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/index.htm'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">   res.sendFile( __dirname + <span class="string">"/"</span> + <span class="string">"index.htm"</span> );</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">'/file_upload'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="built_in">console</span>.log(req.files[<span class="number">0</span>]);  <span class="comment">// 上传的文件信息</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> des_file = __dirname + <span class="string">"/"</span> + req.files[<span class="number">0</span>].originalname;    <span class="comment">//后边用到，上传位置和名字</span></span><br><span class="line">   fs.readFile( req.files[<span class="number">0</span>].path, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">        fs.writeFile(des_file, data, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">if</span>( err )&#123;</span><br><span class="line">              <span class="built_in">console</span>.log( err );</span><br><span class="line">         &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               response = &#123;</span><br><span class="line">                   message:<span class="string">'File uploaded successfully'</span>, </span><br><span class="line">                   filename:req.files[<span class="number">0</span>].originalname</span><br><span class="line">              &#125;;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="built_in">console</span>.log( response );</span><br><span class="line">          res.end( <span class="built_in">JSON</span>.stringify( response ) );</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8081</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> host = server.address().address</span><br><span class="line">  <span class="keyword">var</span> port = server.address().port</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"应用实例，访问地址为 http://%s:%s"</span>, host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>执行以上代码：<br>$ node express_demo.js<br>应用实例，访问地址为 <a href="http://0.0.0.0:8081" target="_blank" rel="external">http://0.0.0.0:8081</a><br>浏览器访问 <a href="http://127.0.0.1:8081/index.htm，如图所示：" target="_blank" rel="external">http://127.0.0.1:8081/index.htm，如图所示：</a></p>
+<p>Cookie 管理<br>我们可以使用中间件向 Node.js 服务器发送 cookie 信息，以下代码输出了客户端发送的 cookie 信息：<br>// express_cookie.js 文件</p>
+<figure class="highlight js"><figcaption><span>var express      = require('express')</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cookieParser = <span class="built_in">require</span>(<span class="string">'cookie-parser'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express()</span><br><span class="line">app.use(cookieParser())</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Cookies: "</span>, req.cookies)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">8081</span>)</span><br></pre></td></tr></table></figure>
+<p>执行以上代码：<br>$ node express_demo.js<br>现在你可以访问 <a href="http://127.0.0.1:8081" target="_blank" rel="external">http://127.0.0.1:8081</a> 并查看终端信息的输出</p>
+
+					</div>
+
+
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/Nodejs/">Nodejs</a>, <a class="tag-link" href="/tags/express/">express</a>, <a class="tag-link" href="/tags/note/">note</a>, <a class="tag-link" href="/tags/笔记/">笔记</a>
+
+					</div>
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+					<a href="/2016/04/07/hello-world/" title="Hello World">&larr; Prev</a>
+
+
+
+					<a href="/2016/04/07/Mongoose--学习笔记/" title="Mongoose--学习笔记">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/07/Express-学习笔记/index.html" data-title="Express--学习笔记" data-url="/2016/04/07/Express-学习笔记/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
