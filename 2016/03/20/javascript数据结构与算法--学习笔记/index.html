@@ -104,7 +104,16 @@
 					<div class="content post-item-content" itemprop="articleBody">
 
 <h1 id="1-栈"><a href="#1-栈" class="headerlink" title="1.栈"></a>1.栈</h1><h1 id="2-堆"><a href="#2-堆" class="headerlink" title="2.堆"></a>2.堆</h1><h1 id="3-基本算法"><a href="#3-基本算法" class="headerlink" title="3.基本算法"></a>3.基本算法</h1><p><a href="http://www.imooc.com/article/4543" target="_blank" rel="external">http://www.imooc.com/article/4543</a><br><a href="http://www.imooc.com/article/4593" target="_blank" rel="external">http://www.imooc.com/article/4593</a><br><a href="http://www.imooc.com/article/4695" target="_blank" rel="external">http://www.imooc.com/article/4695</a><br><a href="http://www.imooc.com/article/4713" target="_blank" rel="external">http://www.imooc.com/article/4713</a></p>
-<h1 id="4-数组"><a href="#4-数组" class="headerlink" title="4.数组"></a>4.数组</h1>
+<h1 id="4-数组"><a href="#4-数组" class="headerlink" title="4.数组"></a>4.数组</h1><h1 id="17-异步操作和Async函数"><a href="#17-异步操作和Async函数" class="headerlink" title="17 异步操作和Async函数"></a>17 异步操作和Async函数</h1><p>Javascript语言的执行环境是“单线程”的，如果没有异步编程，根本没法用，非卡死不可。<br>ES6诞生以前，异步编程的方法，大概有下面四种。</p>
+<ol>
+<li>回调函数</li>
+<li>事件监听</li>
+<li>发布/订阅</li>
+<li>Promise 对象</li>
+</ol>
+<h2 id="17-1-基本概念"><a href="#17-1-基本概念" class="headerlink" title="17.1 基本概念"></a>17.1 基本概念</h2><h3 id="17-1-1-异步"><a href="#17-1-1-异步" class="headerlink" title="17.1.1 异步"></a>17.1.1 异步</h3><p>所谓”异步”，简单说就是一个任务分成两段，先执行第一段，然后转而执行其他任务，等做好了准备，再回过头执行第二段。<br>相应地，连续的执行就叫做同步。由于是连续执行，不能插入其他任务，所以操作系统从硬盘读取文件的这段时间，程序只能干等着。</p>
+<h3 id="17-1-2-回调函数"><a href="#17-1-2-回调函数" class="headerlink" title="17.1.2 回调函数"></a>17.1.2 回调函数</h3><p>JavaScript语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。它的英语名字callback，直译过来就是”重新调用”。<br>一个有趣的问题是，为什么Node.js约定，回调函数的第一个参数，必须是错误对象err（如果没有错误，该参数就是null）？原因是执行分成两段，在这两段之间抛出的错误，程序无法捕捉，只能当作参数，传入第二段。</p>
+<h3 id="17-1-3-Promise"><a href="#17-1-3-Promise" class="headerlink" title="17.1.3 Promise"></a>17.1.3 Promise</h3>
 					</div>
 
 
@@ -129,7 +138,7 @@
 
 
 
-					<a href="/2016/03/20/Markdown语法总结/" title="Markdown语法总结">Next &rarr;</a>
+					<a href="/2016/03/20/javascript数据结构与算法--学习笔记(冲突时的文件备份2016-04-15 09-22-02)/" title="javascript数据结构与算法--学习笔记">Next &rarr;</a>
 
 
 			</div>
