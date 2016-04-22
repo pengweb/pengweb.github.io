@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> rem实现Sprite雪碧图 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" rem实现Sprite雪碧图 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" rem实现Sprite雪碧图 | 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" rem实现Sprite雪碧图 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" rem实现Sprite雪碧图 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" rem实现Sprite雪碧图 | 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
+
+	<link rel="image_src" href="/asset/img/logo.png" >
+	<meta property="og:image" content="/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/04/21/rem实现Sprite雪碧图/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-04-21">2016-04-21</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/04/21/rem实现Sprite雪碧图/"  itemprop="url"><span class="content-title" itemprop="name">rem实现Sprite雪碧图</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<h1 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm gulp</span><br><span class="line">npm install gulp.spritesmith --save</span><br></pre></td></tr></table></figure>
+<h1 id="配置gulp"><a href="#配置gulp" class="headerlink" title="配置gulp"></a>配置gulp</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</span><br><span class="line">    spritesmith = <span class="built_in">require</span>(<span class="string">'gulp.spritesmith'</span>);</span><br><span class="line">    </span><br><span class="line">gulp.task(<span class="string">'sprite'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> spriteData = gulp.src(<span class="string">'static/sprites/*.png'</span>).pipe(spritesmith(&#123;     <span class="comment">//这里是要合并的图片地址</span></span><br><span class="line">        imgName: <span class="string">'sprite.png'</span>,      <span class="comment">//这个是输出的文件名</span></span><br><span class="line">        cssName: <span class="string">'sprite.css'</span>,      <span class="comment">//这个是输出的css文件名</span></span><br><span class="line">        padding: <span class="number">4</span>                  <span class="comment">//间距为4px</span></span><br><span class="line">    &#125;));</span><br><span class="line">    <span class="keyword">return</span> spriteData.pipe(gulp.dest(<span class="string">'path/to/output/'</span>));       <span class="comment">//输出文件的路径</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp sprite</span><br></pre></td></tr></table></figure>
+<h1 id="修改生成的文件（sprite-css）"><a href="#修改生成的文件（sprite-css）" class="headerlink" title="修改生成的文件（sprite.css）"></a>修改生成的文件（sprite.css）</h1><ol>
+<li>先将所有的<code>px</code>单位换为<code>*@n*</code>(这个单位是令rem的基础单位为1px，大家根据自己图稿来配置)</li>
+<li>然后将<code>width</code>和<code>height</code>修改为<code>background-size</code></li>
+<li>然后将生成的<code>sprite.png</code>放到存放图片的文件夹</li>
+<li>然后将所有的<code>background-image</code>的地址修改正确</li>
+<li>最后将<code>sprite.css</code>中的属性，分别插入的真正应用的css中就可以了</li>
+</ol>
+<p>操作确实繁琐，等node学好后，自己写一个插件好了，敬请期待~~~~</p>
+
+					</div>
+
+
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/css/">css</a>, <a class="tag-link" href="/tags/rem/">rem</a>, <a class="tag-link" href="/tags/sprite/">sprite</a>
+
+					</div>
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+
+
+					<a href="/2016/04/11/ECMAScript6--学习笔记/" title="ECMAScript6--学习笔记">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/21/rem实现Sprite雪碧图/index.html" data-title="rem实现Sprite雪碧图" data-url="/2016/04/21/rem实现Sprite雪碧图/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
