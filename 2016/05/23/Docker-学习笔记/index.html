@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> Docker--学习笔记 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" Docker--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" Docker--学习笔记 | 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" Docker--学习笔记 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" Docker--学习笔记 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" Docker--学习笔记 | 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
+
+	<link rel="image_src" href="/asset/img/logo.png" >
+	<meta property="og:image" content="/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/05/23/Docker-学习笔记/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-05-23">2016-05-23</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/05/23/Docker-学习笔记/"  itemprop="url"><span class="content-title" itemprop="name">Docker--学习笔记</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<p>仓库→镜像(ubuntu)→容器(其实就是镜像的实例)</p>
+<h1 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h1><p>基于CentOS7系统安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker</span><br></pre></td></tr></table></figure></p>
+<h1 id="查看Docker版本"><a href="#查看Docker版本" class="headerlink" title="查看Docker版本"></a>查看Docker版本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+<h1 id="运行Docker-deamon"><a href="#运行Docker-deamon" class="headerlink" title="运行Docker deamon"></a>运行Docker deamon</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+<h1 id="默认开机启动"><a href="#默认开机启动" class="headerlink" title="默认开机启动"></a>默认开机启动</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chkconfig docker on</span><br></pre></td></tr></table></figure>
+<h1 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull ubuntu</span><br></pre></td></tr></table></figure>
+<h1 id="查看镜像是否存在"><a href="#查看镜像是否存在" class="headerlink" title="查看镜像是否存在"></a>查看镜像是否存在</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker images ubuntu</span><br></pre></td></tr></table></figure>
+<h1 id="查看编译好的镜像"><a href="#查看编译好的镜像" class="headerlink" title="查看编译好的镜像"></a>查看编译好的镜像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
+<h1 id="查看正在运行的容器"><a href="#查看正在运行的容器" class="headerlink" title="查看正在运行的容器"></a>查看正在运行的容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br><span class="line">sudo docker ps <span class="_">-l</span></span><br><span class="line">sudo docker ps <span class="_">-a</span></span><br></pre></td></tr></table></figure>
+<p>更详细<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker inspect efe   //efe是id的前三位</span><br></pre></td></tr></table></figure></p>
+<h1 id="运行镜像-进入bash控制台"><a href="#运行镜像-进入bash控制台" class="headerlink" title="运行镜像-进入bash控制台"></a>运行镜像-进入bash控制台</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t ubuntu /bin/bash</span><br><span class="line">sudo docker run -i -t ubuntu /bin/<span class="built_in">echo</span> hello  //错误</span><br></pre></td></tr></table></figure>
+<p>参数解释<br>-t:开启一个终端<br>-i:以交互模式运行</p>
+<h1 id="安装新程序-安装node"><a href="#安装新程序-安装node" class="headerlink" title="安装新程序(安装node)"></a>安装新程序(安装node)</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run ubuntu apt-get install -y node</span><br></pre></td></tr></table></figure>
+<p>在执行apt-get 命令的时候，要带上-y参数。如果不指定-y参数的话，apt-get命令会进入交互模式，需要用户输入命令来进行确认，但在docker环境中是无法响应这种交互的。</p>
+<h1 id="保存修改"><a href="#保存修改" class="headerlink" title="保存修改"></a>保存修改</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit 698 pengweb/u-node //起个新名字</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps <span class="_">-l</span></span><br></pre></td></tr></table></figure>
+<p>获得id，只取前3位698就够了</p>
+<h1 id="发布自己的镜像"><a href="#发布自己的镜像" class="headerlink" title="发布自己的镜像"></a>发布自己的镜像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br><span class="line">docker push pengweb/u-node</span><br></pre></td></tr></table></figure>
+<h1 id="删除镜像-必须停止所有的容器"><a href="#删除镜像-必须停止所有的容器" class="headerlink" title="删除镜像-必须停止所有的容器"></a>删除镜像-必须停止所有的容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//停止所有container</span><br><span class="line">docker stop $(docker ps <span class="_">-a</span> -q)</span><br><span class="line">//删除所有container</span><br><span class="line">docker rm $(docker ps <span class="_">-a</span> -q)</span><br><span class="line">//删除images，通过image的id来指定删除谁</span><br><span class="line">docker rmi &lt;image id&gt;</span><br><span class="line">//删除untagged images，也就是那些id为&lt;None&gt;的image的话可以用</span><br><span class="line">docker rmi $(docker images | grep <span class="string">"^&lt;none&gt;"</span> | awk <span class="string">"&#123;print <span class="variable">$3</span>&#125;"</span>)</span><br><span class="line">//要删除全部image的话</span><br><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.docker.org.cn/book/docker/what-is-docker-16.html" target="_blank" rel="external">参考文章1</a><br><a href="http://cache.baiducontent.com/c?m=9d78d513d9951cfe01bad4690d67c0161943f7682ba7a4020fd28449e3732a4b501095ac56260770d6d27d175ffc020baae47132690c7af1dd8a9f4baea68f6d6acd3034074dda114c8e4ceedc4652907dcf47bef145bce6ad2fd1b3d3d9d45f50cb57127af7aacd055e&amp;p=896dca0485cc43ff57ed9779610a8e&amp;newp=8d769a4786cc41ac5fb6c320550a96231610db2151d4db166b82c825d7331b001c3bbfb423221a02d3c17d610aae4a5bedf43c74360421a3dda5c91d9fb4c57479&amp;user=baidu&amp;fm=sc&amp;query=docker+%B2%E9%BF%B4%C8%DD%C6%F7layer&amp;qid=c35423cc000495af&amp;p1=2" target="_blank" rel="external">参考文章2</a></p>
+
+					</div>
+
+
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/docker/">docker</a>, <a class="tag-link" href="/tags/others/">others</a>
+
+					</div>
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+					<a href="/2016/05/23/Redux-学习笔记/" title="Redux--学习笔记">&larr; Prev</a>
+
+
+
+					<a href="/2016/04/29/Canvas-学习笔记/" title="Canvas--学习笔记">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/05/23/Docker-学习笔记/index.html" data-title="Docker--学习笔记" data-url="/2016/05/23/Docker-学习笔记/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

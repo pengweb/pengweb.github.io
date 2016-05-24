@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> Centos/Ubuntu+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 </title>
+	<meta property="og:title" content=" Centos/Ubuntu+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 " />
+	<meta name="twitter:title" content=" Centos/Ubuntu+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" Centos/Ubuntu+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 ">
+	<meta property="og:description" content=" Centos/Ubuntu+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 " />
+	<meta name="twitter:description" content=" Centos/Ubuntu+Nodejs/Xampp服务器环境搭建 | 张鹏的全栈之路 " />
+
+	<link rel="icon" type="image/x-icon" href="/asset/img/favicon.png">
+
+	<link rel="image_src" href="/asset/img/logo.png" >
+	<meta property="og:image" content="/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/atom.xml" title="张鹏的全栈之路" type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/2016/03/21/Centos-Ubuntu-Nodejs-Xampp服务器环境搭建/index.html">
+
+	<link rel="stylesheet" href="/asset/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="layout-header">
+		<header class="header">
+			<div class="layout-logo">
+				<div class="panel-logo">
+
+					<div class="box-logo box-log-md">
+						<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+					</div>
+					<div class="box-main-title">
+						<h5 style="text-align: center">
+							<span>Love life,love ourselves！--Pengzhang</span>
+						</h5>
+					</div>
+					<div class="box-sub-title">
+
+					</div>
+				</div>
+			</div>
+			<div class="layout-menu">
+				<div class="box-logo box-log-xs">
+					<a href="/" title="张鹏的全栈之路"><img src="/asset/img/logo.png" class="img-logo"></a>
+				</div>
+				<div class="box-menu-list">
+					<nav class="page-nav">
+						<ul class="menu-list">
+
+							<li class="box-menu-item"><a href="/"><span class="menu-item">HOME</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/js"><span class="menu-item">Javascript</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/nodejs"><span class="menu-item">Node.js</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/html"><span class="menu-item">Html</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/css"><span class="menu-item">Css</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/note"><span class="menu-item">Note</span></a></li>
+
+							<li class="box-menu-item"><a href="/tags/others"><span class="menu-item">Others</span></a></li>
+
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div class="layout-content">
+
+
+		<div class="row panel-content panel-post-item">
+			<div class="box-post-item">
+				<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+					<p class="content-meta">
+						<span class="meta-date" itemprop="datePublished" content="2016-03-21">2016-03-21</span>
+
+
+					</p>
+
+
+					<h2 class="box-content-title">
+						<a href="/2016/03/21/Centos-Ubuntu-Nodejs-Xampp服务器环境搭建/"  itemprop="url"><span class="content-title" itemprop="name">Centos/Ubuntu+Nodejs/Xampp服务器环境搭建</span></a>
+					</h2>
+
+					<div class="content post-item-content" itemprop="articleBody">
+
+<h1 id="Linux配置"><a href="#Linux配置" class="headerlink" title="Linux配置:"></a>Linux配置:</h1><h2 id="首先配置虚拟机-重要"><a href="#首先配置虚拟机-重要" class="headerlink" title="首先配置虚拟机-重要"></a>首先配置虚拟机-重要</h2><p>编辑-虚拟网络编辑器-修改vmnet0为桥接模式<br>虚拟机-设置-网络适配器-修改为桥接模式</p>
+<h2 id="配置Linux文件"><a href="#配置Linux文件" class="headerlink" title="配置Linux文件"></a>配置Linux文件</h2><p>cd ..   先返回根目录<br>cd etc/sysconfig/network-scripts<br>vi ifcfg-eno<em>    修改这个文件</em>是不同Linux版本这个尾号不同，自己查<br>vi操作：<br>i 进入编辑界面<br>:wq! 保存退出<br>:q!  不保存退出</p>
+<p>将内容改为如图下<br><img src="/images/11111.jpg" alt=""><br>里边很多配置可以不用，可以自行百度</p>
+<p>修改域名服务器-避免ping不通网址<br>cd etc/resolv.conf<br>添加下边这个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 8.8.4.4</span><br></pre></td></tr></table></figure></p>
+<p>安装epel-因为Linux自己的yum发行版不全，所以通过这个扩展<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装NodeJS"><a href="#安装NodeJS" class="headerlink" title="安装NodeJS:"></a>安装NodeJS:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nodejs</span><br></pre></td></tr></table></figure>
+<h1 id="Ubuntu配置"><a href="#Ubuntu配置" class="headerlink" title="Ubuntu配置"></a>Ubuntu配置</h1><h2 id="查看Ubuntu版本"><a href="#查看Ubuntu版本" class="headerlink" title="查看Ubuntu版本"></a>查看Ubuntu版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br><span class="line">uname <span class="_">-a</span></span><br><span class="line">lsb_release <span class="_">-a</span></span><br><span class="line">cat /proc/version</span><br></pre></td></tr></table></figure>
+<h2 id="更新系统及软件"><a href="#更新系统及软件" class="headerlink" title="更新系统及软件"></a>更新系统及软件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update        //更新系统资源</span><br><span class="line">sudo apt-get upgrade            //升级检测，如果有可以升级的就可以进行升级</span><br><span class="line">sudo apt-get upgrade  软件资源名 //升级单个软件到最新版本</span><br><span class="line">sudo apt-get dist-upgrade       //升级所有软件到最新版本</span><br></pre></td></tr></table></figure>
+<h2 id="安装curl包管理工具和Nodejs"><a href="#安装curl包管理工具和Nodejs" class="headerlink" title="安装curl包管理工具和Nodejs"></a>安装curl包管理工具和Nodejs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apt-get update  //一定要先更新，否则很多都找不到</span><br><span class="line">apt-get install curl</span><br><span class="line">apt-get install nodejs   //直接用apt-get就可以了，不用curl也可以</span><br><span class="line"></span><br><span class="line">//下边是另外一个人的</span><br><span class="line">apt-get update  </span><br><span class="line">apt-get install -y python-software-properties software-properties-common  </span><br><span class="line">add-apt-repository ppa:chris-lea/node.js  </span><br><span class="line">apt-get update  </span><br><span class="line">apt-get install nodejs</span><br></pre></td></tr></table></figure>
+<h1 id="安装Xampp"><a href="#安装Xampp" class="headerlink" title="安装Xampp:"></a>安装Xampp:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home</span><br><span class="line"><span class="built_in">cd</span> /zhp</span><br><span class="line"><span class="built_in">cd</span> Desktop</span><br><span class="line">chmod a+x xampp```````.run</span><br><span class="line">sh 文件名-这个不能执行-直接输入文件名也不能执行</span><br><span class="line">./文件名 执行安装</span><br><span class="line">ls当前文件夹</span><br><span class="line">su - 获取权限</span><br><span class="line"><span class="built_in">cd</span> -返回上一级目录</span><br></pre></td></tr></table></figure>
+<p>每次执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /opt</span><br><span class="line">cd lampp</span><br><span class="line">sudo ./manager-linux-x64.run</span><br></pre></td></tr></table></figure></p>
+<h1 id="配置子目录多站点"><a href="#配置子目录多站点" class="headerlink" title="配置子目录多站点:"></a>配置子目录多站点:</h1><p>经常需要在本地调试网站，却又不喜欢在<a href="http://localhost/" target="_blank" rel="external">http://localhost/</a>网站的文件夹名，且几个比较重要的项目我想直接用端口号以示区分，想达到的效果如下：<br><a href="http://localhost/" target="_blank" rel="external">http://localhost/</a>     默认80端口的时候访问的是D:\目录下的A网站<br><a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a>    8080端口的时候访问的是E:\目录下的B网站<br>以此类推，网站目录可以存放在硬盘下的任何地方。<br>实现的过程如下：<br>1、打开apache的httpd.conf文件（有的时候是在etc/目录下），在Listen 80处另起一行输入Listen 8080 监听8080端口，如需其他端口需逐个添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Listen 80</span><br><span class="line">Listen 1000</span><br><span class="line">Listen 1001</span><br><span class="line">Listen 1002</span><br><span class="line">…</span><br></pre></td></tr></table></figure></p>
+<p>2.如果上边httpd.conf文件是在etc里找到的，那就在apache目录下的httpd.conf文件内添加一行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Include conf/extra/httpd-vhosts.conf   //来设置启动虚拟机</span><br></pre></td></tr></table></figure></p>
+<p>如果在etc目录下的httpd.conf文件里找到这句代码，检查他前边是不是有#，有的话去掉就行了</p>
+<p>3.在etc/extra/httpd-vhosts.conf   这个文件里添加以下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:1003&gt;</span><br><span class="line">DocumentRoot <span class="string">"/opt/lampp/htdocs/work2"</span></span><br><span class="line">ServerName localhost                         用ServerAlias是子域名像什么www或者blog什么的 不是pengweb.net</span><br><span class="line">&lt;/VirtualHost&gt;                                         上边这部分</span><br><span class="line"></span><br><span class="line">&lt;Directory <span class="string">"/opt/lampp/htdocs/work2"</span>&gt;</span><br><span class="line">Options Indexes FollowSymLinks Includes ExecCGI</span><br><span class="line">AllowOverride All</span><br><span class="line">Order allow,deny</span><br><span class="line">Allow from all</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">NameVirtualHost *:80                             下边这个是必须添加的，这个我给删了 但是也没事</span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">DocumentRoot <span class="string">"/opt/lampp/htdocs/"</span>    这个是系统默认的存放网站文件的根目录</span><br><span class="line">ServerName localhost</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
+<p>下边是网上搜集的，但是我有报错，所以只做修改参考，根据不同环境可能需要用到</p>
+<p>在httpd.conf文件最后一行添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">NameVirtualhost localhost:8080 <span class="comment"># 虚拟主机端口            这里有的环境不用加，会报错</span></span><br><span class="line">&lt;virtualhost localhost:8080&gt;</span><br><span class="line">documentroot E:/sk  <span class="comment">#这里就是你的网站目录绝对路径了哦~注意斜杠的方向</span></span><br><span class="line">servername locahost:8080 <span class="comment">#对应监听的端口</span></span><br><span class="line">&lt;/virtualhost&gt;</span><br><span class="line"></span><br><span class="line">&lt;Directory <span class="string">"E:/sk"</span>&gt;</span><br><span class="line">Options Indexes FollowSymLinks</span><br><span class="line">AllowOverride All <span class="comment">#允许URL重写</span></span><br><span class="line">Order allow,deny</span><br><span class="line">Allow from all</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure></p>
+<p>完毕后记得重启apache，然后再浏览器输入<a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> 就可以访问到E:/sk下的网站了</p>
+<h1 id="数据库配置："><a href="#数据库配置：" class="headerlink" title="数据库配置："></a>数据库配置：</h1><p>今天在学习使用chmod命令时候把/var/www以及子目录的权限改为了777，后来再打开就出现了以下错误：<br>Wrong permissions on configuration file, should not be world writable!<br>后来在网上查了查，原来<strong>phpmyadmin必须在755权限</strong>下才可以运行。<br>解决办法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www</span><br><span class="line">sudo chmod -R 755 phpmyadmin</span><br></pre></td></tr></table></figure></p>
+<p>再访问，成功！<br>数据库在首页那选—–用户—然后添加用户—-填用户名，密码，  然后创建一个数据库名</p>
+<h1 id="安装Wordpress"><a href="#安装Wordpress" class="headerlink" title="安装Wordpress:"></a>安装Wordpress:</h1><p>在安装文档的根目录下<strong>删除wp-config.php</strong>然后直接访问网址就进入安装步骤了很简单。</p>
+
+					</div>
+
+
+					<div class="content-tag">
+
+<a class="tag-link" href="/tags/centos/">centos</a>, <a class="tag-link" href="/tags/linux/">linux</a>, <a class="tag-link" href="/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/tags/xampp/">xampp</a>, <a class="tag-link" href="/tags/服务器/">服务器</a>
+
+					</div>
+
+
+
+				</article>
+			</div>
+
+		</div>
+
+		<div class="panel-post-nav">
+			<div class="box-post-nav">
+
+
+					<a href="/2016/03/21/Ejs--学习笔记/" title="Ejs--学习笔记">&larr; Prev</a>
+
+
+
+					<a href="/2016/03/20/正则表达式--学习笔记/" title="正则表达式--学习笔记">Next &rarr;</a>
+
+
+			</div>
+		</div>
+		<div class="content-comments">
+		
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/21/Centos-Ubuntu-Nodejs-Xampp服务器环境搭建/index.html" data-title="Centos/Ubuntu+Nodejs/Xampp服务器环境搭建" data-url="/2016/03/21/Centos-Ubuntu-Nodejs-Xampp服务器环境搭建/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'pengweb'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+		</div>
+		
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2016 <a href="https://github.com/pengweb"  target="_blank" target="_blank">Pengzhang</a> 
+					<span class="theme">Powered: <a href="https://github.com/pengweb/pengweb.github.io" target="_blank">pengweb.net</a>, 京ICP备: <a href="" target="_blank">15017479</a></span>
+					</p>
+
+					
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
